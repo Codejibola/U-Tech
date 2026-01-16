@@ -10,7 +10,7 @@ const NetworkParticles = () => {
     let width = canvas.width = window.innerWidth;
     let height = canvas.height = 250;
 
-    const points = Array.from({ length: 25 }, () => ({
+    const points = Array.from({ length: 20 }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
       vx: (Math.random() - 0.5) * 0.3,
