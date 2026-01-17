@@ -8,7 +8,7 @@ const NetworkParticles = () => {
     const ctx = canvas.getContext("2d");
 
     let width = canvas.width = window.innerWidth;
-    let height = canvas.height = 250;
+    let height = canvas.height = 150;
 
     const points = Array.from({ length: 20 }, () => ({
       x: Math.random() * width,
@@ -68,7 +68,7 @@ const NetworkParticles = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-x-0 top-0 h-[250px] w-full"
+      className="absolute inset-x-0 top-0 h-[150px] w-full"
     />
   );
 };
