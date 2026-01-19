@@ -6,8 +6,8 @@ import Topbar from "./components/Topbar";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Work from "./pages/Work";
-// import Tutorials from "./pages/Tutorials";
-// import About from "./pages/About";
+import Tutorials from "./pages/Tutorials";
+import About from "./pages/About";
 // import Contact from "./pages/Contact";
 
 function App() {
@@ -21,9 +21,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
           <Route path="/work" element={<Work />} />
-          {/* <Route path="/tutorials" element={<Tutorials />} />
+          <Route path="/tutorials" element={<Tutorials />} />
           <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} /> */}
+          {/* <Route path="/contact" element={<Contact />} /> */}
         </Routes>
       </div>
     </BrowserRouter>

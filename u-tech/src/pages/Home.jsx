@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import NetworkParticles from "../components/ui/NetworkParticles.jsx";
 import { Helmet } from "react-helmet-async";
+import Work from "./Work.jsx";
 
 
 const Home = () => {
@@ -11,11 +12,54 @@ const Home = () => {
           <title>U-Tech | Building SEO-Optimized Modern Web Solutions</title>
           <meta
               name="description"
-              content="U-Tech builds fast, scalable, SEO-optimized web applications with modern UI/UX and clean architecture." />
+              content="U-Tech builds fast, scalable, SEO-optimized web applications with modern UI/UX and clean architecture. Expert web development, frontend development, and digital solutions." />
           <meta
               name="keywords"
-              content="web development, SEO optimization, modern web apps, UI UX design, U-Tech" />
+              content="web development, SEO optimization, modern web apps, UI UX design, U-Tech, frontend development, full-stack development, React development, web solutions" />
+          <meta name="author" content="U-Tech" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <meta name="robots" content="index, follow" />
           <link rel="canonical" href="https://u-tech.vercel.app/" />
+
+          {/* Open Graph Tags */}
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://u-tech.vercel.app/" />
+          <meta property="og:title" content="U-Tech | Modern Web Development & Digital Solutions" />
+          <meta property="og:description" content="Build fast, scalable web applications with U-Tech. Expert UI/UX design, SEO optimization, and digital transformation." />
+          <meta property="og:site_name" content="U-Tech" />
+
+          {/* Twitter Card Tags */}
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content="U-Tech | Modern Web Development" />
+          <meta name="twitter:description" content="Expert web development and SEO-optimized digital solutions." />
+
+          {/* Structured Data - Organization Schema */}
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "U-Tech",
+              "url": "https://u-tech.vercel.app/",
+              "description": "Web development and digital solutions company",
+              "sameAs": [
+                "https://twitter.com/utech",
+                "https://linkedin.com/company/utech"
+              ]
+            })}
+          </script>
+
+          {/* Structured Data - Service Schema */}
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "U-Tech",
+              "image": "https://u-tech.vercel.app/logo.png",
+              "description": "Web development, UI/UX design, and digital solutions",
+              "areaServed": "Worldwide",
+              "serviceType": ["Web Development", "UI/UX Design", "SEO Optimization", "Digital Solutions"]
+            })}
+          </script>
     </Helmet><main className="relative overflow-hidden bg-slate-50">
     
 
@@ -60,10 +104,10 @@ const Home = () => {
                               </a>
 
                               <a
-                                  href="/work"
+                                  href="/tutorials"
                                   className="text-slate-700 font-medium hover:text-slate-900 transition"
                               >
-                                  View Work
+                                  Learn with U-Tech
                               </a>
                           </div>
                       </motion.div>
@@ -187,6 +231,67 @@ const Home = () => {
                           </ul>
                       </div>
 
+                  </div>
+              </section>
+              <Work />
+
+              {/* TESTIMONIALS */}
+              <section className="py-24 bg-white">
+                  <div className="mx-auto max-w-7xl px-6">
+                      <div className="text-center mb-16">
+                          <h2 className="text-3xl md:text-4xl font-semibold text-slate-900">
+                              What Our Clients Say
+                          </h2>
+                          <p className="mt-4 text-slate-600 max-w-2xl mx-auto">
+                              Real success stories from businesses we&apos;ve partnered with to build their digital presence.
+                          </p>
+                      </div>
+
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                          {[
+                              {
+                                  name: "Sarah Johnson",
+                                  role: "CEO, TechStart",
+                                  feedback: "U-Tech transformed our vision into a stunning, high-performing web application. Their team's expertise in both design and development is unmatched.",
+                              },
+                              {
+                                  name: "Michael Chen",
+                                  role: "Founder, E-commerce Pro",
+                                  feedback: "The SEO optimization work U-Tech did increased our organic traffic by 150%. Their strategic approach to web development really paid off.",
+                              },
+                              {
+                                  name: "Emma Williams",
+                                  role: "Product Manager, InnovateCo",
+                                  feedback: "Working with U-Tech was seamless. They understood our requirements perfectly and delivered a scalable solution that grows with us.",
+                              },
+                          ].map((testimonial, index) => (
+                              <motion.div
+                                  key={index}
+                                  initial={{ opacity: 0, y: 20 }}
+                                  whileInView={{ opacity: 1, y: 0 }}
+                                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                                  viewport={{ once: true }}
+                                  className="rounded-xl bg-slate-50 border border-slate-200 p-6 space-y-4"
+                              >
+                                  <div className="flex gap-1">
+                                      {[...Array(5)].map((_, i) => (
+                                          <span key={i} className="text-teal-500">★</span>
+                                      ))}
+                                  </div>
+                                  <p className="text-slate-600 italic">
+                                      &quot;{testimonial.feedback}&quot;
+                                  </p>
+                                  <div className="pt-4 border-t border-slate-200">
+                                      <p className="font-semibold text-slate-900">
+                                          {testimonial.name}
+                                      </p>
+                                      <p className="text-sm text-slate-500">
+                                          {testimonial.role}
+                                      </p>
+                                  </div>
+                              </motion.div>
+                          ))}
+                      </div>
                   </div>
               </section>
 

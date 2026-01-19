@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { ExternalLink } from 'lucide-react';
-import NetworkParticles from '../components/ui/NetworkParticles';
 import Project1 from '../assets/project1.png';
 import Project2 from '../assets/project2.png';
 import Project3 from '../assets/project3.png';
@@ -43,7 +42,6 @@ const Work = () => {
 
   return (
     <>
-      <NetworkParticles />
     <main className="min-h-screen bg-white pt-32 pb-20">
 
       {/* SEO */}
