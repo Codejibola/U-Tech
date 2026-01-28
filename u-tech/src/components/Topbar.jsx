@@ -21,14 +21,14 @@ const Topbar = () => {
   return (
     <header className="fixed top-0 inset-x-0 z-50 bg-white/80 backdrop-blur border-b border-slate-200">
       <div className="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
-        
+
         {/* Logo */}
-        <div className="flex items-center ">
-          <img src={logo} alt="U-Tech Logo" className="h-12 w-13 font-bold" />
+        <div className="flex items-center gap-2">
+          <img src={logo} alt="U-Tech Logo" className="h-10 w-auto" />
           <span className="font-semibold text-teal-500">U-Tech</span>
         </div>
 
-        {/* Navigation */}
+        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
           {navItems.map(({ path, label }) => (
             <NavLink
@@ -43,9 +43,10 @@ const Topbar = () => {
               {label}
             </NavLink>
           ))}
+
         </nav>
 
-        {/* CTA Button & Hamburger */}
+        {/* CTA & Hamburger */}
         <div className="flex items-center gap-4">
           <NavLink
             to="/contact"
@@ -54,7 +55,6 @@ const Topbar = () => {
             Start a Web Project
           </NavLink>
 
-          {/* Hamburger Menu */}
           <button
             onClick={toggleMenu}
             className="md:hidden text-slate-700 hover:text-slate-900"
@@ -82,6 +82,8 @@ const Topbar = () => {
                 {label}
               </NavLink>
             ))}
+
+
             <NavLink
               to="/contact"
               onClick={() => setIsOpen(false)}

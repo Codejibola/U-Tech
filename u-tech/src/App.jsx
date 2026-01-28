@@ -11,7 +11,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 
 // // User Dashboard Pages
-// import DashboardLayout from "./pages/dashboard/DashboardLayout";
+import DashboardLayout from "./pages/dashboard/DashboardLayout";
 // import DashboardOverview from "./pages/dashboard/Overview";
 // import DashboardTutorials from "./pages/dashboard/Tutorials";
 // import DashboardProjects from "./pages/dashboard/Projects";
@@ -42,24 +42,24 @@ function App() {
           <Route path="/tutorials" element={<Tutorials />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          {/* 
-           ========= USER DASHBOARD ========= 
-          <Route path="/dashboard" element={<DashboardLayout />}>
-            <Route index element={<DashboardOverview />} />
+         
+           {/* ========= USER DASHBOARD =========  */}
+           <Route path="/dashboard" element={<DashboardLayout />}>
+            {/* <Route index element={<DashboardOverview />} />
             <Route path="tutorials" element={<DashboardTutorials />} />
             <Route path="projects" element={<DashboardProjects />} />
             <Route path="payments" element={<DashboardPayments />} />
-            <Route path="messages" element={<DashboardMessages />} />
+            <Route path="messages" element={<DashboardMessages />} /> */}
           </Route>
 
-           ========= ADMIN DASHBOARD ========= 
-          <Route path="/admin" element={<AdminLayout />}>
+           {/* ========= ADMIN DASHBOARD ========= */}
+           {/* <Route path="/admin" element={<AdminLayout />}>
             <Route index element={<AdminOverview />} />
             <Route path="users" element={<AdminUsers />} />
             <Route path="projects" element={<AdminProjects />} />
             <Route path="payments" element={<AdminPayments />} />
             <Route path="tutorials" element={<AdminTutorials />} /> 
-            */}
+          </Route> */}
         </Routes>
       </div>
     </BrowserRouter>

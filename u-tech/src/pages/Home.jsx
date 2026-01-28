@@ -22,14 +22,17 @@ const Home = () => {
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://u-tech.vercel.app/" />
 
-        {/* Open Graph Tags */}
+        {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://u-tech.vercel.app/" />
         <meta property="og:title" content="U-Tech | Modern Web Development & Digital Solutions" />
-        <meta property="og:description" content="Build fast, scalable web applications with U-Tech. Expert UI/UX design, SEO optimization, and digital transformation." />
+        <meta
+          property="og:description"
+          content="Build fast, scalable web applications with U-Tech. Expert UI/UX design, SEO optimization, and digital transformation."
+        />
         <meta property="og:site_name" content="U-Tech" />
 
-        {/* Twitter Card Tags */}
+        {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="U-Tech | Modern Web Development" />
         <meta name="twitter:description" content="Expert web development and SEO-optimized digital solutions." />
@@ -51,7 +54,6 @@ const Home = () => {
       </Helmet>
 
       <main className="relative overflow-hidden bg-slate-50">
-
         {/* Network Background */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <NetworkParticles />
@@ -60,7 +62,6 @@ const Home = () => {
         {/* HERO SECTION */}
         <section className="relative pt-32 pb-24">
           <div className="mx-auto max-w-7xl px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-
             {/* LEFT: TEXT */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
@@ -112,13 +113,13 @@ const Home = () => {
                 <pre className="p-8 text-base text-slate-200 overflow-hidden min-h-96">
                   <span className="text-teal-400">import</span> Trust <span className="text-teal-400">from</span> <span className="text-amber-300">&apos;u-tech&apos;</span>;
                   {"\n"}<span className="text-teal-400">import</span> {"{"} Performance, SEO, Design {"}"} <span className="text-teal-400">from</span> <span className="text-amber-300">&apos;@u-tech/core&apos;</span>;
-                  {"\n"}{"\n"}<span className="text-teal-400">export default</span> <span className="text-sky-400">function</span> WhyClientsChooseUs() {"{"}
+                  {"\n\n"}<span className="text-teal-400">export default</span> <span className="text-sky-400">function</span> WhyClientsChooseUs() {"{"}
                   {"\n"}  <span className="text-teal-400">const</span> results = {"{"}
                   {"\n"}    speed: <span className="text-amber-300">&quot;Fast-loading, optimized builds&quot;</span>,
                   {"\n"}    seo: <span className="text-amber-300">&quot;Search engines love our structure&quot;</span>,
                   {"\n"}    ux: <span className="text-amber-300">&quot;Interfaces users actually enjoy&quot;</span>,
                   {"\n"}    scale: <span className="text-amber-300">&quot;Built to grow with your business&quot;</span>,
-                  {"\n"}  {"}"};{"\n"}{"\n"}  <span className="text-teal-400">return</span> (
+                  {"\n"}  {"}"};{"\n\n"}  <span className="text-teal-400">return</span> (
                   {"\n"}    &lt;<span className="text-sky-400">Project</span>&gt;
                   {"\n"}      &lt;<span className="text-sky-400">SEO</span> optimized /&gt;
                   {"\n"}      &lt;<span className="text-sky-400">Performance</span> tuned /&gt;
@@ -126,7 +127,7 @@ const Home = () => {
                   {"\n"}      &lt;<span className="text-sky-400">Outcome</span> valueDriven results={"{"}results{"}"} /&gt;
                   {"\n"}    &lt;/<span className="text-sky-400">Project</span>&gt;
                   {"\n"}  );
-                  {"\n"}{"}"}
+                  {"\n}"} 
                   {"\n\n"}<span className="text-green-400">✓ Trusted by clients • SEO-ready • Built for growth</span>
                 </pre>
               </div>
@@ -142,15 +143,36 @@ const Home = () => {
             </h2>
 
             <p className="mt-4 max-w-2xl text-slate-600">
-              We design and build fast, scalable, and maintainable web applications using modern technologies and best practices.
+              We design and build fast, scalable, and maintainable web applications and websites using modern technologies and best practices.
             </p>
 
             <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
-                { title: "Frontend Web Development", icon: <Monitor size={20} /> },
-                { title: "Full-Stack Web Applications", icon: <Layout size={20} /> },
-                { title: "MVP Development for Startups", icon: <Star size={20} /> },
-                { title: "Website Optimization & Maintenance", icon: <ArrowRight size={20} /> },
+                {
+                  title: "Web Development",
+                  desc: "Reliable, production-ready websites and web apps that load fast, work across devices, and are easy to maintain.",
+                  icon: <Monitor size={20} />,
+                },
+                {
+                  title: "MVP Development",
+                  desc: "Focused MVPs that help you test ideas, attract early users, and validate your product before scaling.",
+                  icon: <Star size={20} />,
+                },
+                {
+                  title: "UI/UX Design",
+                  desc: "User-centered designs that make your product intuitive, usable, and visually clear from day one.",
+                  icon: <PenTool size={20} />,
+                },
+                {
+                  title: "Graphic Design",
+                  desc: "Clean, professional visuals that strengthen your brand and communicate clearly across digital platforms.",
+                  icon: <PenTool size={20} />,
+                },
+                {
+                  title: "Video Editing",
+                  desc: "Structured, engaging video content optimized for clarity, storytelling, and audience retention.",
+                  icon: <Video size={20} />,
+                },
               ].map((service, index) => (
                 <motion.div
                   key={index}
@@ -159,9 +181,7 @@ const Home = () => {
                 >
                   <div className="flex items-center gap-2 mb-2 text-teal-500">{service.icon}</div>
                   <h3 className="font-medium text-slate-900">{service.title}</h3>
-                  <p className="mt-3 text-sm text-slate-600">
-                    Built for performance, scalability, and long-term growth.
-                  </p>
+                  <p className="mt-3 text-sm text-slate-600">{service.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -171,33 +191,34 @@ const Home = () => {
         {/* SUPPORTING SERVICES */}
         <section className="py-24 bg-slate-50">
           <div className="mx-auto max-w-7xl px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
-
             <motion.div whileHover={{ y: -4 }} className="space-y-4">
-              <div className="flex items-center gap-2 text-teal-500"><PenTool size={20} /> <h3 className="text-xl font-semibold text-slate-900">UI/UX Design</h3></div>
-              <ul className="mt-2 space-y-2 text-slate-600">
-                <li>Product UI Design</li>
-                <li>UX Research & Wireframing</li>
-                <li>Design Systems</li>
-                <li>Developer Handoff</li>
-              </ul>
+              <div className="flex items-center gap-2 text-teal-500">
+                <PenTool size={20} />
+                <h3 className="text-xl font-semibold text-slate-900">UI/UX Design</h3>
+              </div>
+              <p className="text-slate-600">
+                User-centered designs that make your product intuitive, usable, and visually clear from day one.
+              </p>
             </motion.div>
 
             <motion.div whileHover={{ y: -4 }} className="space-y-4">
-              <div className="flex items-center gap-2 text-teal-500"><PenTool size={20} /> <h3 className="text-xl font-semibold text-slate-900">Graphic Design</h3></div>
-              <ul className="mt-2 space-y-2 text-slate-600">
-                <li>Brand Identity</li>
-                <li>Marketing Creatives</li>
-                <li>Flyers & Posters</li>
-              </ul>
+              <div className="flex items-center gap-2 text-teal-500">
+                <PenTool size={20} />
+                <h3 className="text-xl font-semibold text-slate-900">Graphic Design</h3>
+              </div>
+              <p className="text-slate-600">
+                Clean, professional visuals that strengthen your brand and communicate clearly across digital platforms.
+              </p>
             </motion.div>
 
             <motion.div whileHover={{ y: -4 }} className="space-y-4">
-              <div className="flex items-center gap-2 text-teal-500"><Video size={20} /> <h3 className="text-xl font-semibold text-slate-900">Video & Media</h3></div>
-              <ul className="mt-2 space-y-2 text-slate-600">
-                <li>Promo Videos</li>
-                <li>Social Media Content</li>
-                <li>Motion Graphics</li>
-              </ul>
+              <div className="flex items-center gap-2 text-teal-500">
+                <Video size={20} />
+                <h3 className="text-xl font-semibold text-slate-900">Video Editing</h3>
+              </div>
+              <p className="text-slate-600">
+                Structured, engaging video content optimized for clarity, storytelling, and audience retention.
+              </p>
             </motion.div>
           </div>
         </section>
@@ -208,12 +229,24 @@ const Home = () => {
         {/* TUTORIAL HIGHLIGHTS */}
         <section className="py-24 bg-white">
           <div className="mx-auto max-w-7xl px-6">
-            <h2 className="text-3xl md:text-4xl font-semibold text-slate-900 mb-6">Tutorial Highlights</h2>
+            <h2 className="text-3xl md:text-4xl font-semibold text-slate-900 mb-6">
+              Tutorial Highlights
+            </h2>
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
-                { title: "React for Beginners", desc: "Step-by-step guide to building your first React app." },
-                { title: "UI/UX Design Fundamentals", desc: "Learn design principles that improve user experience." },
-                { title: "MVP Development Tips", desc: "Best practices for rapid prototype and MVP creation." }
+                {
+                  title: "React for Beginners",
+                  desc: "Practical, step-by-step learning designed to help you build real projects — not just watch videos.",
+                },
+                {
+                  title: "UI/UX Design Fundamentals",
+                  desc: "Learn design principles that improve usability, clarity, and user experience.",
+                },
+                {
+                  title: "MVP Development Tips",
+                  desc: "Guidance on validating ideas, shipping fast, and avoiding early-stage mistakes.",
+                },
               ].map((tutorial, index) => (
                 <motion.div
                   key={index}
@@ -274,8 +307,8 @@ const Home = () => {
                   className="rounded-xl bg-slate-50 border border-slate-200 p-6 space-y-4"
                 >
                   <img
-                    src={`https://via.placeholder.com/80?text=Logo+${i+1}`}
-                    alt={`Client Logo ${i+1}`}
+                    src={`https://via.placeholder.com/80?text=Logo+${i + 1}`}
+                    alt={`Client Logo ${i + 1}`}
                     className="mx-auto mb-2"
                   />
                   <div className="flex gap-1 justify-center">
@@ -283,7 +316,9 @@ const Home = () => {
                       <Star key={i} size={16} className="text-teal-500" />
                     ))}
                   </div>
-                  <p className="text-slate-600 italic">&quot;This is a placeholder testimonial highlighting client satisfaction.&quot;</p>
+                  <p className="text-slate-600 italic">
+                    &quot;This is a placeholder testimonial highlighting client satisfaction.&quot;
+                  </p>
                   <div className="pt-4 border-t border-slate-200">
                     <p className="font-semibold text-slate-900">Client Name</p>
                     <p className="text-sm text-slate-500">Company / Role</p>
@@ -310,7 +345,6 @@ const Home = () => {
             Start a Web Project
           </a>
         </section>
-
       </main>
     </>
   );
